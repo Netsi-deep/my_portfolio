@@ -1,0 +1,466 @@
+/* መሠረታዊ ቅንብሮች (Reset & Base Styles) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-color: #0b0f19;        /* Deep dark background */
+    --second-bg-color: #111827; /* Dark gray-blue for contrast */
+    --text-color: #f8fafc;      /* Clean white text */
+    --sub-text-color: #94a3b8;  /* Muted silver text */
+    --main-color: #38bdf8;      /* Electric blue accent */
+    --hover-color: #0ea5e9;     /* Deep electric blue */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title span {
+    color: var(--main-color);
+}
+
+/* 1. Sticky Navbar Section */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 9%;
+    background-color: rgba(11, 15, 25, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.menu-btn.open i {
+    transform: rotate(90deg);
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+.navbar a {
+    font-size: 1.05rem;
+    color: var(--sub-text-color);
+    font-weight: 500;
+    margin-left: 2rem;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: var(--main-color);
+}
+
+/* 2. Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.1), transparent 50%);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 4rem;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--sub-text-color);
+    margin-bottom: 0.5rem;
+}
+
+.hero-text h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-text h1 span {
+    color: var(--main-color);
+}
+
+.hero-text p {
+    font-size: 1rem;
+    color: var(--sub-text-color);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--main-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: var(--bg-color);
+    font-weight: 600;
+    transition: 0.3s ease;
+    border: 2px solid var(--main-color);
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--main-color);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-box {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: var(--second-bg-color);
+    border: 4px solid var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+}
+
+.avatar-icon {
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+/* 3. About Me Section */
+.about {
+    background-color: var(--second-bg-color);
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    color: var(--sub-text-color);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* 4. Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background-color: var(--second-bg-color);
+    padding: 2.5rem 2rem;
+    border-radius: 0.8rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--main-color);
+    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.05);
+}
+
+.skill-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+    font-size: 0.9rem;
+    color: var(--sub-text-color);
+}
+
+/* 5. Projects Section */
+.projects {
+    background-color: var(--second-bg-color);
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-card {
+    background-color: var(--bg-color);
+    border-radius: 0.8rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--main-color);
+}
+
+.project-info {
+    padding: 2rem;
+}
+
+.project-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.project-info p {
+    font-size: 0.95rem;
+    color: var(--sub-text-color);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    height: 75px; /* እኩል ቁመት እንዲኖራቸው */
+}
+
+.tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack span {
+    background-color: var(--second-bg-color);
+    color: var(--main-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.proj-link {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.proj-link i {
+    margin-right: 0.2rem;
+}
+
+.proj-link:hover {
+    color: var(--main-color);
+}
+
+/* 6. Contact Section */
+.contact {
+    text-align: center;
+}
+
+.contact-desc {
+    color: var(--sub-text-color);
+    max-width: 600px;
+    margin: -2rem auto 3rem auto;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    background-color: var(--second-bg-color);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.contact-item i {
+    margin-right: 0.5rem;
+    color: var(--main-color);
+}
+
+.contact-item:hover {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+}
+
+.contact-item:hover i {
+    color: var(--bg-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-color);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+    color: var(--sub-text-color);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design (Mobile & Tablet) */
+@media (max-width: 991px) {
+    section {
+        padding: 8rem 5% 2rem;
+    }
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .avatar-box {
+        width: 240px;
+        height: 240px;
+    }
+    .avatar-icon {
+        font-size: 5.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1.5rem 5%;
+        position: fixed;
+    }
+    .menu-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 5%;
+        left: 5%;
+        background-color: rgba(11, 15, 25, 0.98);
+        padding: 1.5rem 1rem;
+        border-radius: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+        display: none;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    }
+    .navbar.active {
+        display: flex;
+    }
+    .navbar a {
+        margin: 0;
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+    .hero-image,
+    .about-container,
+    .skills-grid,
+    .projects-container,
+    .contact-links {
+        width: 100%;
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+    scroll-margin-top: 120px;
+}
+/* Avatar Box and Image Styling */
+.avatar-box {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid var(--primary-color, #d97706);
+    box-shadow: 0 0 25px rgba(217, 119, 6, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ማውስ ሲያርፍበት ትንሽ ከፍና ጎልቶ እንዲታይ */
+.avatar-box:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 35px rgba(217, 119, 6, 0.6);
+}
